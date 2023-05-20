@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import ErrorBoundary from "./components/error_boundary";
+import { Route, Routes } from "react-router-dom";
+import { publicRoute } from "./constants/public_route.constant";
+import AdminLayout from "./main/admin";
+import { authRoute } from "./constants/auth_route.constant";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <ErrorBoundary>
+      <Routes>
+        {publicRoute.map(({ path, element }) => {
+          const Element = element;
+          return (
+            <Route
+              key={path}
+              path={path}
+              element={
+                <Suspense fallback={null}>
+                  <Element />
+                </Suspense>
+              }
+            />
+          );
+        })}
+        <Route element={<AdminLayout />}>
+          {authRoute.map(({ path, element }) => {
+            const Element = element;
+            return (
+              <Route
+                key={path}
+                path={path}
+                element={
+                  <Suspense fallback={null}>
+                    <Element />
+                  </Suspense>
+                }
+              />
+            );
+          })}
+        </Route>
+      </Routes>
+    // </ErrorBoundary>
   );
 }
 
