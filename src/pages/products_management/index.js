@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Affix, Button } from "antd";
 import { useState } from "react";
 import MainAsin from "./components/main_asin";
 import SubAsin from "./components/sub_asin";
@@ -19,6 +19,9 @@ const ProductsManagement = () => {
       </Button>
       {isShowMainAsin && <MainAsin setIsShowSubAsin={setIsShowSubAsin} />}
       {isShowSubAsin && <SubAsin />}
+      {/* <Affix offsetBottom={0}>
+        <Button>Save</Button>
+      </Affix> */}
     </>
   );
 };

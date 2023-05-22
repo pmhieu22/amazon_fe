@@ -42,14 +42,6 @@ const Sidebar = () => {
           }}
           items={[
             {
-              key: "Tongquan",
-              icon: <DashboardOutlined />,
-              label: "Dashboard",
-              onClick: () => {
-                navigate(adminRoute.DASHBOARD);
-              },
-            },
-            {
               key: "asinManagement",
               // icon: <UserOutlined />,
               label: "ASIN Management",
