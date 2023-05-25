@@ -2,5 +2,7 @@
   width: 40%;
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-start-end-radius: 8px !important;
+  border-start-start-radius: 8px !important;
 }
 

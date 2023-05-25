@@ -1,13 +1,47 @@
 .sub-asin-table {
   margin: 10px 10px 20px 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-start-end-radius: 8px !important;
+  border-start-start-radius: 8px !important;
 }
 
 .single-keyword-list-table {
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .sub-asin-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
   margin: 10px 10px 0 10px;
+}
+
+.create-btn {
+  background-color: #f9d600;
+  color: black !important;
+  border: none;
+}
+
+/* :global(.ant-table-thead) {
+  background-color: #f9d600 !important;
+  padding: 0px !important;
+} */
+
+.create-btn:hover {
+  border: none !important;
+  background-color: #ebca00;
+}
+
+.save-btn {
+  width: fit-content;
+  color: black !important;
+  background-color: #f4a100;
+  border: none;
+}
+
+.save-btn:hover {
+  border: none !important;
+  background-color: #e19800;
 }

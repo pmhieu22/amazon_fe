@@ -3,3 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.ant-table-thead .ant-table-cell {
+  /* padding: 10px !important; */
+  /* border-start-end-radius: 0 !important; */
+  /* border-start-start-radius: 0 !important; */
+  background-color: #232f3e !important;
+  color: white !important;
+}
+

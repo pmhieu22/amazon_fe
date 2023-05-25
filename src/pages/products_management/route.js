@@ -1,11 +1,11 @@
 import { lazy } from "react";
 import { adminRoute } from "../../constants/routes.constant";
 
-const ProductsManagement = lazy(() => import("./index"));
+const AsinsManagement = lazy(() => import("./index"));
 
 const route = {
-    path: adminRoute.PRODUCT_MANAGEMENT,
-    element: ProductsManagement,
+    path: adminRoute.ASINS_MANAGEMENT,
+    element: AsinsManagement,
 }
 
 export default route;

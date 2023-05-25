@@ -1,5 +1,7 @@
 import { Table } from "antd";
 
+import styles from "./style.module.css";
+
 const SingleKeywordTable = ({ header, content }) => {
   const data = [
     {
@@ -19,6 +21,7 @@ const SingleKeywordTable = ({ header, content }) => {
   ];
   return (
     <Table
+      className={styles["single-keyword-table"]}
       dataSource={data}
       columns={columns}
       pagination={false}

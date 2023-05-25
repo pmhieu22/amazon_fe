@@ -2,8 +2,9 @@ import { Affix, Button } from "antd";
 import { useState } from "react";
 import MainAsin from "./components/main_asin";
 import SubAsin from "./components/sub_asin";
+import { useDispatch, useSelector } from "react-redux";
 
-const ProductsManagement = () => {
+const AsinsManagement = () => {
   const [isShowMainAsin, setIsShowMainAsin] = useState(false);
   const [isShowSubAsin, setIsShowSubAsin] = useState(false);
 
@@ -26,4 +27,4 @@ const ProductsManagement = () => {
   );
 };
 
-export default ProductsManagement;
+export default AsinsManagement;

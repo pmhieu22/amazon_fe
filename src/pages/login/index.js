@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 const LoginPage = () => {
   const dispatch = useDispatch();
 
-  const { isLoggedIn } = useSelector((state) => state.authReducer);
+  // const { isLoggedIn } = useSelector((state) => state.authReducer);
 
   const validator = (values) => {
     const errors = {};
@@ -41,7 +41,7 @@ const LoginPage = () => {
       formik.handleSubmit();
     }
   };
-
+  //check isLoggedIn
   return (
     <>
       <div className={styles["login-container"]}>

@@ -4,6 +4,6 @@ export const clientRoute = {
 };
 
 export const adminRoute = {
-    PRODUCT_MANAGEMENT: "/admin/product-management",
+    ASINS_MANAGEMENT: "/admin/asins-management",
     DASHBOARD: "/admin/dashboard"
 };

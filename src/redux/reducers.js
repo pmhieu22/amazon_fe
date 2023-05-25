@@ -1,4 +1,5 @@
-import authReducer from './auth/reducer';
+import authReducer from "./auth/reducer";
+import asinReducer from "./asin/reducer";
 // import groupPermissionReducer from './group_permission/reducer';
 // import customerReducer from './customer/reducer';
 // import userReducer from './user/reducer';
@@ -13,19 +14,20 @@ import authReducer from './auth/reducer';
 // import resourceReducer from './resource/reducer';
 
 const rootReducer = {
-    authReducer,
-    // groupPermissionReducer,
-    // customerReducer,
-    // userReducer,
-    // childrenReducer,
-    // predictionReducer,
-    // medicineReducer,
-    // statisticReducer,
-    // agentReducer,
-    // bankReducer,
-    // reportReducer,
-    // scheduleReducer,
-    // resourceReducer
-}
+  authReducer,
+  asinReducer,
+  // groupPermissionReducer,
+  // customerReducer,
+  // userReducer,
+  // childrenReducer,
+  // predictionReducer,
+  // medicineReducer,
+  // statisticReducer,
+  // agentReducer,
+  // bankReducer,
+  // reportReducer,
+  // scheduleReducer,
+  // resourceReducer
+};
 
 export default rootReducer;

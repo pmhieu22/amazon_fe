@@ -100,17 +100,22 @@ const SubAsin = () => {
               <SingleKeywordTable header="4 Bullet Points" content="abcd" />
               <SingleKeywordTable header="Description" content="abcd" />
             </Space>
-          </div>
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <Button
-              style={{ marginTop: 10 }}
-              onClick={() => {
-                setIsShowList(false);
-                setIsShowListBtn(true);
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
               }}
             >
-              Cancel
-            </Button>
+              <Button
+                style={{ marginTop: 10 }}
+                onClick={() => {
+                  setIsShowList(false);
+                  setIsShowListBtn(true);
+                }}
+              >
+                Cancel
+              </Button>
+            </div>
           </div>
         </>
       )}
@@ -119,6 +124,7 @@ const SubAsin = () => {
         <Space size={10}>
           {isShowSingleKeyBtn && (
             <Button
+              className={styles["create-btn"]}
               onClick={() => {
                 setIsShowSingleKeyword(true);
                 setIsShowSingleKeyBtn(false);
@@ -129,6 +135,7 @@ const SubAsin = () => {
           )}
           {isShowListBtn && (
             <Button
+              className={styles["create-btn"]}
               onClick={() => {
                 setIsShowList(true);
                 setIsShowListBtn(false);
@@ -138,6 +145,9 @@ const SubAsin = () => {
             </Button>
           )}
         </Space>
+        <Button className={styles["save-btn"]} onClick={(/*call api*/) => {}}>
+          Save
+        </Button>
       </div>
     </>
   );
