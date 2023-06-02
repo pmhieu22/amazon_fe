@@ -6,7 +6,7 @@ import { useActions } from "../../redux/useActions";
 import { Navigate, useNavigate } from "react-router-dom";
 import { adminRoute, clientRoute } from "../../constants/routes.constant";
 
-const LoginPage = () => {
+const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -16,6 +16,10 @@ const LoginPage = () => {
 
   const validator = (values) => {
     const errors = {};
+
+    if (!values.email) {
+      errors.email = "Required";
+    }
 
     if (!values.username) {
       errors.username = "Required";
@@ -29,16 +33,18 @@ const LoginPage = () => {
 
   const formik = useFormik({
     initialValues: {
+      email: "",
       username: "",
       password: "",
     },
     validate: validator,
     onSubmit: async (values) => {
-      try {
-        dispatch(authActions.actions.login(values.username, values.password));
-      } catch (err) {
-        console.log(err);
-      }
+      // try {
+      //   dispatch(authActions.actions.login(values.username, values.password));
+      // } catch (err) {
+      //   console.log(err);
+      // }
+      console.log("values regis: ", values);
     },
   });
 
@@ -49,15 +55,12 @@ const LoginPage = () => {
   };
 
   //check isLoggedIn
-  if (isLoggedIn) {
-    return <Navigate to={adminRoute.ASINS_MANAGEMENT} replace={true} />;
-  }
   return (
     <>
-      <div className={styles["login-container"]}>
-        <div className={styles["login-form"]}>
+      <div className={styles["register-container"]}>
+        <div className={styles["register-form"]}>
           <Card>
-            <div className={styles["login-header"]}>AMZ Listing</div>
+            <div className={styles["register-header"]}>Get Started</div>
             <Form
               autoComplete="off"
               style={{
@@ -66,6 +69,18 @@ const LoginPage = () => {
                 padding: "5px 20px",
               }}
             >
+              <Form.Item
+                validateStatus={formik.errors.email && "error"}
+                help={formik.errors.email}
+              >
+                <Input
+                  name="email"
+                  placeholder="Email"
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onKeyDown={handleEnterKey}
+                />
+              </Form.Item>
               <Form.Item
                 validateStatus={formik.errors.username && "error"}
                 help={formik.errors.username}
@@ -90,28 +105,25 @@ const LoginPage = () => {
                   onKeyDown={handleEnterKey}
                 />
               </Form.Item>
-              <Form.Item className={styles["login-remember-checkbox"]}>
-                <Checkbox>Remember me?</Checkbox>
-              </Form.Item>
               <Button
                 block
                 type="primary"
                 onClick={formik.handleSubmit}
-                className={styles["login-btn"]}
+                className={styles["register-btn-1"]}
               >
-                Sign in
+                Sign up
               </Button>
-              <div className={styles["register-action"]}>
-                <span>Don't have an account ? </span>
+              <div className={styles["login-action"]}>
+                <span>Already have an account ? </span>
                 <Button
                   type="link"
                   block
-                  className={styles["register-btn"]}
+                  className={styles["login-btn-1"]}
                   onClick={() => {
-                    navigate(clientRoute.REGISTER);
+                    navigate(clientRoute.LOGIN);
                   }}
                 >
-                  Sign up
+                  Sign in
                 </Button>
               </div>
             </Form>
@@ -122,4 +134,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Register;

@@ -1,0 +1,15 @@
+version: "2.15.1"
+
+services:
+  frontend:
+    container_name: docker-amz-fe
+    image: docker-amz-fe-i
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - 3000:3000
+    volumes: 
+      - /app/node_modules
+      - ./:/amazon_app

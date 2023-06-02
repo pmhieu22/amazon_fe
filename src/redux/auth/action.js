@@ -3,23 +3,17 @@ const prefix = "AUTH_";
 const types = {
   LOGIN: prefix + "LOGIN",
   LOGOUT: prefix + "LOGOUT",
-  CHANGE_PASSWORD: prefix + "CHANGE_PASSWORD",
-  REGISTER: prefix + "REGISTER",
-  GET_USER_INFO: prefix + "GET_USER_INFO",
-
-  CHECK_SESSION: prefix + "CHECK_SESSION",
-
-  RESET_PASSWORD_USER: prefix + "RESET_PASSWORD_USER",
-
+  CREATE_USER: prefix + "CREATE_USER",
+  TEST_TOKEN: prefix + "TEST_TOKEN",
   UPDATE_STATE: prefix + "UPDATE_STATE",
 };
 
 const actions = {
-  login: (email = "", password = "") => {
+  login: (username = "", password = "") => {
     return {
       type: types.LOGIN,
       payload: {
-        email,
+        username,
         password,
       },
     };
@@ -38,16 +32,22 @@ const actions = {
       },
     };
   },
-  register: () => {
+  createUser: (email, username, password) => {
     return {
-      type: types.REGISTER,
-      payload: {},
+      type: types.CREATE_USER,
+      payload: {
+        email,
+        username,
+        password,
+      },
     };
   },
-  checkSession: () => {
+  testToken: (token) => {
     return {
-      type: types.CHECK_SESSION,
-      payload: {},
+      type: types.TEST_TOKEN,
+      payload: {
+        token,
+      },
     };
   },
 

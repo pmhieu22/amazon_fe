@@ -1,0 +1,51 @@
+.login-container {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #146eb4;
+  background: -webkit-linear-gradient(-135deg, #ff9900, #146eb4);
+  background: -o-linear-gradient(-135deg, #ff9900, #146eb4);
+  background: -moz-linear-gradient(-135deg, #ff9900, #146eb4);
+  background: linear-gradient(-135deg, #ff9900, #146eb4);
+}
+
+.login-form {
+  width: 32%;
+  /* margin: 0 auto; */
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.login-remember-checkbox {
+  align-items: flex-start;
+  margin-bottom: 10px !important;
+}
+
+.login-btn {
+  min-height: 40px;
+  background-color: #146eb4;
+}
+
+.register-action {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.register-btn {
+  width: min-content !important;
+  height: min-content !important;
+  padding: 0 !important;
+}
